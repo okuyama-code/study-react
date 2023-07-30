@@ -1,0 +1,20 @@
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.card {
+    border: 1px solid #ccc; /* ボーダーのスタイルを指定 */
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.card:hover {
+    background: #536bcd;
+}
+
+.title {
+    color: rgba(16, 10, 2, 0.162);
+}

@@ -3,6 +3,7 @@ import { Main } from '../components/Main'
 
 import styles from '@/styles/Home.module.css'
 import { Header } from '@/components/Header'
+import { Links } from '@/components/Links'
 
 
 export default function Home() {
@@ -15,7 +16,7 @@ export default function Home() {
       <Header />
 
       <Main page="index" />
-      <h2>rannning</h2>
+      <Links />
     </div>
   )
 }

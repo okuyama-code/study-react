@@ -1,13 +1,12 @@
 import React from 'react'
-import { Container } from './Container'
+import { Headline } from './Headline'
 
 export function Main(props) {
   return (
     <>
-        <Container
-          page={props.page} >
+        <Headline page={props.page} >
             index page!!!/{props.page}
-        </Container>
+        </Headline>
     </>
   )
 }

@@ -1,9 +1,9 @@
 import Head from 'next/head'
-import { Main } from '../components/Main'
+import { Main } from '../components/Main/Main'
 
 import styles from '@/styles/Home.module.css'
-import { Header } from '@/components/Header'
-import { Links } from '@/components/Links'
+import { Header } from '@/components/header/Header'
+import { Links } from '@/components/links/Links'
 
 
 export default function Home() {

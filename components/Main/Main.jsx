@@ -1,7 +1,6 @@
 import React from 'react'
-import { Headline } from './Headline'
-import styles from "../styles/Home.module.css"
-
+import styles from "./Main.module.css"
+import { Headline } from '@/components/Headline/Headline'
 export function Main(props) {
   return (
     <main className={styles.main}>

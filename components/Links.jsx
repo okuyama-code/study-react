@@ -3,22 +3,22 @@ import classes from "./Links.module.css"
 const ITEMS =[
     {
         href: "https://nextjs.org/docs",
-        title: "Document",
+        title: "Document →",
         description: "Next.js is a framework for building web applications."
     },
     {
         href: "https://nextjs.org/learn",
-        title: "Learn",
+        title: "Learn →",
         description: "To effectively use Next.js, it helps to be familiar with JavaScript, React, and related web development concepts. "
     },
     {
         href: "https://nextjs.org/docs/app/building-your-application/routing",
-        title: "Routing",
+        title: "Routing →",
         description: "The skeleton of every application is routing."
     },
     {
         href: "https://nextjs.org/docs/app/api-reference",
-        title: "API Reference",
+        title: "API Reference →",
         description: "The Next.js API reference is divided into the following sections:"
     },
 ];

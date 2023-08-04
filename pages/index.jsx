@@ -11,7 +11,6 @@ export default function Home() {
   const [count, setCount] = useState(1)
 
   const handleClick = useCallback((e) => {
-    console.log(count);
     if (count < 10 ) {
       setCount(count => count + 1);
     }

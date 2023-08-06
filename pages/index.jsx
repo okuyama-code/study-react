@@ -6,19 +6,27 @@ import { Header } from '@/components/header/Header'
 import { Links } from '@/components/links/Links'
 import { useCallback, useEffect, useState } from 'react'
 
-
-export default function Home() {
+const useCounter = () => {
   const [count, setCount] = useState(1);
-  const [text, setText] = useState("");
   const [isShow, setIsShow] = useState(true);
 
+   // useCallbackにすることで何度も生成されるのを防ぐ
   const handleClick = useCallback((e) => {
     if (count < 10 ) {
-      setCount(count => count + 1);
+      setCount(prevCount => prevCount + 1);
     }
   },[count]);
 
+  const handleDisplay = useCallback(() => {
+    setIsShow((prevIsShow) => !prevIsShow)
+  }, [])
 
+  return { count, isShow, handleClick, handleDisplay };
+}
+
+const useInputArray = () => {
+  const [text, setText] = useState("");
+  const [array, setArray] = useState([]);
 
   const handleChange = useCallback((e) => {
     if (e.target.value.length > 5) {
@@ -28,10 +36,26 @@ export default function Home() {
     setText(e.target.value.trim())
   }, [])
 
-  // useCallbackにすることで何度も生成されるのを防ぐ
-  const handleDisplay = useCallback(() => {
-    setIsShow((isShow) => !isShow)
-  }, [])
+  const handleAdd = useCallback(() => {
+   setArray((prevArray) => {
+    if (prevArray.some((item) => item === text)) {
+      alert("同じ要素がすでに存在します。");
+      return prevArray;
+    }
+
+    return [...prevArray, text];
+   })
+  }, [text]) //[text]がないと関数が再生成されないので
+  // 空文字がどんどん追加されてしまうので注意
+
+  return { text, array, handleChange, handleAdd };
+}
+
+export default function Home() {
+  const { count, isShow, handleClick, handleDisplay } = useCounter();
+  const { text, array, handleChange, handleAdd } = useInputArray();
+
+
 
   useEffect(() => {
     document.body.style.backgroundColor = "lightblue"
@@ -56,6 +80,15 @@ export default function Home() {
         value={text}
         onChange={handleChange}
       />
+      <button onClick={handleAdd}>追加</button>
+      <ul>
+        {array.map(item => {
+          return (
+            <li key={item}>{item}</li>
+          )
+        })}
+      </ul>
+
       <Main page="index" />
       <Links />
     </div>

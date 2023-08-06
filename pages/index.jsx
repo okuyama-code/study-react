@@ -7,14 +7,14 @@ import { Links } from '@/components/links/Links'
 
 
 export default function Home(props) {
-  console.log(props)
+  // console.log(props)
   // propsで渡って来たものをあらためて分割代入している
   const {
     count, isShow, handleClick, handleDisplay,
     text, array, handleChange, handleAdd,
   } = props;
 
-  
+
 
   return (
     <div className={styles.container}>

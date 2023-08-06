@@ -172,3 +172,21 @@ export default function Home() {
 }
 ```
 
+useBgLightBlueも作成
+
+```jsx
+const useBgLightBlue = () => {
+  useEffect(() => {
+    document.body.style.backgroundColor = "lightblue"
+    return () => {
+      document.body.style.backgroundColor = ""
+    }
+  }, []);
+}
+
+export default function Home() {
+    useBgLightBlue();
+     //returnするものがない場合はこのように使う
+}
+```
+

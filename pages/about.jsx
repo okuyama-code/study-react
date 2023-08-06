@@ -36,7 +36,7 @@ export default function About({ count, isShow, handleClick, handleDisplay,
       </ul>
 
       <Main page="About Page" />
-      <Links />
+     
     </div>
   )
 }

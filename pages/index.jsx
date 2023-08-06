@@ -40,8 +40,7 @@ export default function Home(props) {
         })}
       </ul>
 
-      <Main page="Index Page" />
-      <Links />
+      <Main page="index" />
     </div>
   )
 }

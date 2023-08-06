@@ -1,12 +1,47 @@
-import React from 'react'
 import styles from "./Main.module.css"
 import { Headline } from '@/components/Headline/Headline'
+import { Links } from "@/components/links/Links";
+import React, { useCallback, useState } from 'react';
+
+const ITEMS =[
+  {
+      href: "https://nextjs.org/docs",
+      title: "Document →",
+      description: "Next.js is a framework for building web applications."
+  },
+  {
+      href: "https://nextjs.org/learn",
+      title: "Learn →",
+      description: "To effectively use Next.js, it helps to be familiar with JavaScript, React, and related web development concepts. "
+  },
+  {
+      href: "https://nextjs.org/docs/app/building-your-application/routing",
+      title: "Routing →",
+      description: "The skeleton of every application is routing."
+  },
+  {
+      href: "https://nextjs.org/docs/app/api-reference",
+      title: "API Reference →",
+      description: "The Next.js API reference is divided into the following sections:"
+  },
+];
+
+
 export function Main(props) {
+  const [items, setItems] = useState(ITEMS);
+
+    const handleReduce = useCallback(() => {
+        setItems(prevItems => {
+            return prevItems.slice(0, prevItems.length - 1);
+    })
+    }, [])
+
   return (
     <main className={styles.main}>
-      <Headline page={props.page} >
-      {props.page} page!!!
+      <Headline page={props.page} handleReduce={handleReduce} >
+        <code>{items.length}</code>
       </Headline>
+      <Links items={items}/>
     </main>
   )
 }

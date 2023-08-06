@@ -9,7 +9,7 @@ import { useInputArray } from '@/hooks/useInputArray'
 // import { useBgLightBlue } from '@/hooks/useBgLightBlue'
 
 
-export default function Home() {
+export default function About() {
   const { count, isShow, handleClick, handleDisplay } = useCounter();
   const { text, array, handleChange, handleAdd } = useInputArray();
   // useBgLightBlue();
